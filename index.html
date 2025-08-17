@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daria Jones Advanced ePortfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https:///kit.fontawesome.com/d3115057fc.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "-WSSNyrKAP2idmTRP",  
+      });
+   })();
+</script>
+</head>
+<body>
+
+    
+   
+<section id="landing-page" onmousemove="moveBackground(event)">
+    <nav>
+        <figure>
+            <img id="personal-logo" src="./assets/personalbrand_logo.png"  alt=" ">
+        </figure>
+        <ul class="nav__link--list">
+            <li class="nav__link" onclick="toggleModal()">
+                <a href="#" class="
+                nav__link--anchor 
+                link__hover-effect 
+                link__hover-effect--black
+                ">About</a>
+            </li>
+
+              <li class="nav__link">
+                <a href="#projects" class="
+                nav__link--anchor 
+                link__hover-effect 
+                link__hover-effect--black
+                ">Projects</a>
+            </li>
+
+              <li class="nav__link" onclick="toggleModal()">
+                <a href="#" class="
+                nav__link--anchor 
+                link__hover-effect 
+                link__hover-effect--black
+                ">Contact</a>
+            </li>
+
+            <li class="nav__link" onclick="toggleContrast()">
+                <a href="#" class="
+                nav__link--anchor 
+                link__hover-effect 
+                link__hover-effect--black
+                "><i class="fa-solid fa-circle-half-stroke"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <header class="header">
+        <div class="header__content">
+            <h1 class="title">Hello!</h1>
+            <h1 class="title__second blue">I'm Daria,</h1>
+            <p class="header__para">a former instructional designer / training specialist and now, a results-driven <b class="blue">Frontend Developer </b> with a passion for crafting intuitive UI/UX. </p> <p class="header__para"> I'm experienced in full-lifecycle web development and Agile project management.<br> Here's a bit more <b class="blue click" onclick="toggleModal()">about me.</b>
+            </p>
+            <div class="social__list">
+                <a href="https://www.linkedin.com/in/dariajonesmba"  target="__blank" class="social__link click" ><i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/DariaJ-webdev"  target="__blank" class="social__link click"><i class="fa-brands fa-github"></i>
+                </a>
+                <a href="./assets/Daria Jones _Web Developer Resume.pdf"  target="__blank" class="social__link click"><i class="fa-solid fa-file-pdf"></i>
+                </a>           
+            </div>
+        </div>
+    </header>
+
+
+    <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+        <i class="fa-solid fa-envelope"></i>
+    </button>
+</a>
+
+    <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+    </a>
+        <div class="modal">
+        <div class="modal__half modal__about">
+        <h3 class="modal__title modal__title--about">Here's a bit more about me.</h3>
+        <h4 class="modal__subtitle modal__subtitle--about">Frontend Developer.</h4>
+        <p class="modal__para">I'm a results-driven <b class="blue">Frontend Developer </b>with a passion for blending design and technology to create intuitive, <b class="blue">visually appealing</b> user interfaces <b class="blue">(UI)</b>; user-friendly and <b class="blue">engaging </b>user experience <b class="blue">(UX) </b>websites. <br><br>
+        I'm experienced in modern web technologies, <b class="blue">Agile project management</b>, and in <b class="blue">full-lifecycle website development</b>, from initial design consultation and coding to testing, troubleshooting, and optimization. </p>
+        <div class="modal__languages">
+            <figure class="modal__language"><img src="./assets/HTML5_Badge.png"  alt="HTML5" class="modal__language--img"><span class="language__name">HTML5</span></figure>
+            <figure class="modal__language"><img src="./assets/CSS.png" alt="CSS3" class="modal__language--img"><span class="language__name">CSS3</span></figure>
+            <figure class="modal__language"><img src="./assets/javascript.png" alt="JavaScript" class="modal__language--img"><span class="language__name">JavaScript</span></figure>
+            <figure class="modal__language"><img src="./assets/react.png" alt="React" class="modal__language--img"><span class="language__name">React</span>
+            </figure>
+        </div>
+       </div>
+    <div class="modal__half modal__contact"> <i class="fa-solid fa-xmark modal__exit  click" onclick="toggleModal()" aria-hidden="true"></i>
+        <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+        <h3 class="modal__subtitle modal__subtitle--contact">I'm currently open to new opportunities.</h3>
+        <form id="contact__form" onsubmit="contact(event)">
+        <div class="form__item">
+        <label class="form__item--label"> <span class="required-asterisk">*</span>What is your name?</label>
+        <input class="input" name="user_name" type="text" required></input>
+   </div>
+
+<div class="form__item">
+    <label class="form__item--label"> <span class="required-asterisk">*</span>Where can I email you?</label>
+    <input class="input" name="user_email" type="text" required></input>
+</div>
+
+<div class="form__item">
+    <label class="form__item--label">   <span class="required-asterisk">*</span>Tell me something good!</label>
+    <textarea class="input" name="message" type="text" required></textarea>
+   </div>
+    <button id="contact__submit" class="form__submit">Send it my way!</button>
+        </form>
+        <div class="modal__overlay modal__overlay--loading">
+            <i class="fa-solid fa-gear"></i>
+        </div>
+        <div class="modal__overlay modal__overlay--success">Thanks for the message.<br><br> I'm looking forward to speaking with you soon!
+        </div>
+        </div>
+        </div>
+        <img src="./assets/semi circle.svg" class="shape shape--0">
+        <img src="./assets/circle.svg" class="shape shape--1">
+        <img src="./assets/squiggly.svg" class="shape shape--2">
+        <img src="./assets/circle.svg" class="shape shape--3">
+        <img src="./assets/triangle.svg" class="shape shape--4">
+        <img src="./assets/circle.svg" class="shape shape--5">
+        <img src="./assets/squiggly.svg" class="shape shape--6">
+         <img src="./assets/circle.svg" class="shape shape--7">
+        <img src="./assets/semi circle.svg" class="shape shape--8">
+        </section>
+
+
+<section id="projects">
+    <div class="container">
+    <div class="row">
+        <h1 class="section__title">Here are a couple of my <span class="blue">projects</span>:</h1>
+            <ul class="project__list">
+                <li class="project">
+                    <div class="project__wrapper">
+                        <img src="./assets/Project1.png" class="project__img" alt="project screenshots">
+                            <div class="project__description">
+                         <h3 class="project__description--title">Everyday Ebony, LLC</h3>
+                            <h4 class="project__description--subtitle">HTML5 and CSS3</h4><!--list whatever languages used here-->
+                       <p class="project__description--para">I designed and built a custom e-commerce website for Everyday Ebony LLC, a new clothing retail startup! I handled all the front-end development, using HTML5, CSS3, and JavaScript to create a dynamic and user-friendly experience. I strategicallay integrated AI to make the site super efficient and speed up development.
+                       </p>
+                       <div class="project__description--links"> <!--links to github projects-->
+                        <a href="https://www.github.com/DariaJ-webdev" target="_blank" class="project__description--link">
+                       <i class="fa-brands fa-github"></i></a>
+                       <a href="https://dariaj-webdev.github.io/Eveweb/" target="_blank" class="project__description--link">
+                       <i class="fa-solid fa-link"></i>
+                       </a>
+                    </div>
+                        </div>
+                      </div>
+                </li>
+                </ul>                   
+           </div>
+    </div>
+
+ <div class="container">
+        <div class="row">
+                <ul class="project__list">
+                <li class="project">
+                    <div class="project__wrapper">
+                        <img src="./assets/toronto.jpg" class="project__img" alt="project screenshots">
+                            <div class="project__description">
+                         <h3 class="project__description--title">JavaScript Journey</h3>
+                            <h4 class="project__description--subtitle">HTML5, CSS3, and js</h4><!--list whatever languages used here-->
+                       <p class="project__description--para">This is more than just a fun, quirky project , it's meant to demonstrate my  creativity and skills in JavaScript and give users a chance to interact with  webpages. 
+                       </p>
+                       <div class="project__description--links"> <!--links to github projects-->
+                        <a href="https://www.github.com/DariaJ-webdev" target="_blank" class="project__description--link">
+                       <i class="fa-brands fa-github"></i></a>
+                       <a href="https://dariaj-webdev.github.io/JavaScript_journey/" target="_blank" class="project__description--link">
+                       <i class="fa-solid fa-link"></i></a>
+                       </a>
+                    </div>
+                        </div>
+                      </div>
+                </li>                   
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+
+    <div class="container">
+        <div class="row">
+                <ul class="project__list">
+                <li class="project">
+                    <div class="project__wrapper">
+                        <img src="./assets/HTML5_CSS3_JSX_React_project.png" class="project__img" alt="projectscreenshots">
+                        <!--Include images of your own projects here-->
+                        <div class="project__description">
+                         <h3 class="project__description--title">React Library Project 3</h3>
+                            <h4 class="project__description--subtitle">HTML5, CSS3, js, jsx, and React </h4>
+                            <p class="project__description--para">This commerce website project, rebuilds a former HTML5 and CSS project into a dymanic React jsx website with fast page loads, project sort functionality, and responsiveness for smaller screens.
+                       </p>
+                       <div class="project__description--links"> <!--links to github projects-->
+                        <a href="https://github.com/DariaJ-webdev/" target="_blank" class="project__description--link">
+                       <i class="fa-brands fa-github"></i></a>
+                       <a href=" https://dariaj-webdev.github.io/library-react-tutorial/" target="_blank" class="project__description--link">
+                       <i class="fa-solid fa-link"></i></a>
+                       </a>
+                    </div>
+                        </div>
+                     
+                    </div>
+                </li>                   
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- note BEMCSS involves using this class-naming syntax block, element and modifier are being separated by the double underscore and dash-->
+<footer>
+    <div class="container">
+        <div class="row footer__row">
+             <a href="#" class="footer__anchor">
+            <figure>
+                <img class="footer__logo--img" src="./assets/personalbrand_logo.png" alt=" ">
+            </figure>
+              <span class="footer__logo--popper">
+            Top
+            <i class="fas fa-arrow-up"></i>
+          </span>
+          </a>
+
+            <div class="footer__links-container"> 
+                <div class="footer__social--list">
+                    <a href="https://www.linkedin.com/in/dariajonesmba" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    ">LinkedIn</a>
+                </div>
+
+                <div class="footer__social--list">
+                    <a href="https://github.com/DariaJ-webdev/" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    ">Github</a>
+                </div>
+
+                <div class="footer__social--list">
+                    <a href="#" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    ">Contact</a>
+                </div>
+
+                <div class="footer__social--list">
+                    <a href="./assets/Daria Jones _Web Developer Resume.pdf" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    ">Resume
+                </a>
+                </div>
+            </div> 
+            <div class="footer__copyright">Copyright © 2025 Daria Jones</div>
+        </div>
+    </div>
+</footer>
+<script src="./script.js"></script>
+</body>
+</html>
